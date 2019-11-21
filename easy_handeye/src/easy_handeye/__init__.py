@@ -1,6 +1,6 @@
 
-GET_SAMPLE_LIST_TOPIC = 'get_sample_list'
-TAKE_SAMPLE_TOPIC = 'take_sample'
-REMOVE_SAMPLE_TOPIC = 'remove_sample'
-COMPUTE_CALIBRATION_TOPIC = 'compute_calibration'
-SAVE_CALIBRATION_TOPIC = 'save_calibration'
+GET_SAMPLE_LIST_TOPIC = '/sawyer_realsense_handeyecalibration_eye_on_base/get_sample_list'
+TAKE_SAMPLE_TOPIC = '/sawyer_realsense_handeyecalibration_eye_on_base/take_sample'
+REMOVE_SAMPLE_TOPIC = '/sawyer_realsense_handeyecalibration_eye_on_base/remove_sample'
+COMPUTE_CALIBRATION_TOPIC = '/sawyer_realsense_handeyecalibration_eye_on_base/compute_calibration'
+SAVE_CALIBRATION_TOPIC = '/sawyer_realsense_handeyecalibration_eye_on_base/save_calibration'
