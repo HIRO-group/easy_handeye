@@ -59,7 +59,7 @@ This should launch Rviz Easy Hand-Eye Config and RQT Easy Hand-Eye Perspective. 
 #### Intel RealSense Camera Image
 * Open another terminal tab (making sure to enter into the intera workspace and run Python 2) and show the Intel RealSense camera image:
 ```
-rosservice call /sawyer_realsense_handeyecalibration_eye_on_base/take_sample 
+rosrun image_view image_view image:=/aruco_tracker/result 
 ```
 #### Run the Automatic Calibration
 * Navigate to the automatic calibration and run the script:
