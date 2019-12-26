@@ -325,7 +325,6 @@ def main():
     # Determining calibration stability
 
 
-def get_pose(
 
 
 
