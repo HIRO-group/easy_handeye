@@ -3,15 +3,17 @@
 Automatic Calibration implementation of easy_handeye: TF / VISP Hand-Eye Calibration
 ============================================ 
 
-This is an edit to the [Easy Handy-Eye calibration program] ("https://github.com/IFL-CAMP/easy_handeye") to create an automatic calibration program for the HIRO Sawyer robot. 
+This is an edit to the [Easy Handy-Eye calibration program] (https://github.com/IFL-CAMP/easy_handeye) to create an automatic calibration program for the HIRO Sawyer robot. 
 
 This utilizes the eye-on-base implementation of the program using an Intel RealSense camera mounted on the ceiling above Sawyer.
 
 
-## Getting started
+### Getting started:
+This tutorial is picks up from the basic ROS setup outline in the HIRO wiki. If you have not yet setup your workspace using that [guide](https://hiro-group.ronc.one/new_member.html), please do so first!
+
 These are the same basic steps for implementation of Easy Hand-Eye.
 
-- clone this repository into your catkin workspace:
+- clone this fork of the repository into your workspace:
 ```
 cd ~/catkin_ws/src  # replace with path to your workspace
 git clone https://github.com/HIRO-group/easy_handeyee
@@ -28,9 +30,12 @@ rosdep install -iyr --from-paths src
 catkin build
 ```
 
-## Calibration
+### Calibration
+The calibration is built on the principle of a 3D grid. The poses of the upper left and the lower right corners of the Intel RealSense's view are used to define the grid.
 
-There are a couple of steps before we can start using the automatic calibration
+## New Camera Position
+If this is the first time you are running the calibration or you have changed the position of the camera above the Sawyer, you will need to intialize the 
+
 * Connect to the HIROLab_5G wifi network
 * Plug the Intel RealSense camera cable into your machine
 * Turn on Sawyer
