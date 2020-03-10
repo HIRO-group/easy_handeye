@@ -49,6 +49,10 @@ catkin build
 The calibration is built on the principle of a 3D grid. The poses of the upper left and the lower right corners of the Intel RealSense's view are used to define the grid.
 ![calibration grid](hhttps://github.com/HIRO-group/easy_handeye/blob/master/readme_files/calibration_grid.png)
 
+The y- and z-axes are split into three sections, and the x-axis is split into four sections. The calibration starts at the lower left corner of the grid. There are a total of 36 cells in the grid and the program moves Sawyer through each, sampling a random position within the bounds of the x, y, and z ranges of each cell as well as a random set of values of pitch, yaw and roll (rotation and tilt of the end effector). Once the end effector reaches the semi-random position, the program attempts to take a sample snapshot of the arUco marker's position.
+
+If the marker is consistently readable to the camera (the camera can detect the orientation of the marker stably), the program takes a sample snapshot of the marker/end effectors position and saves it for calibration. If the marker is unstable or the camera is unable to read the marker in the position, the program will pause for a few seconds, print an error, and move on. The program need not take a sample of all positions to produce an accurate calibration, but a significant reduction in successful samples or a reduction in a certain area of the grid will affect calibration accuracy. 
+
 
 
 * Connect to the HIROLab_5G wifi network
