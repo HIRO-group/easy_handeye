@@ -3,26 +3,40 @@
 Automatic Calibration implementation of easy_handeye: TF / VISP Hand-Eye Calibration
 ============================================ 
 
-This is an edit to the [Easy Handy-Eye calibration program] (https://github.com/IFL-CAMP/easy_handeye) to create an automatic calibration program for the HIRO Sawyer robot. 
+This is an edit to the [Easy Hand-Eye calibration program](https://github.com/IFL-CAMP/easy_handeye) to create an automatic calibration program for the HIRO Sawyer robot. 
 
 This utilizes the eye-on-base implementation of the program using an Intel RealSense camera mounted on the ceiling above Sawyer.
 
 
-### Getting started:
+### Installation:
 This tutorial is picks up from the basic ROS setup outline in the HIRO wiki. If you have not yet setup your workspace using that [guide](https://hiro-group.ronc.one/new_member.html), please do so first!
 
 These are the same basic steps for implementation of Easy Hand-Eye.
 
-- clone this fork of the repository into your workspace:
+- clone this fork of the repository into your workspace - this fork is different than the master version of easy_handeye, so if you have the original version, you will need to delete that fersion first:
 ```
-cd ~/catkin_ws/src  # replace with path to your workspace
+cd ~/catkin_ws/src  # replace with path to your workspace (if you followed the WIKI guide, this should be correct)
+```
+if you have the original version, remove it from your workspace first:
+```
+rm -r easy_handeye/
+```
+clone the HIRO fork of the repository:
+```
 git clone https://github.com/HIRO-group/easy_handeyee
 ```
 
-- satisfy dependencies
+satisfy dependencies
 ```
 cd ..  # now we are inside ~/catkin_ws
 rosdep install -iyr --from-paths src
+```
+installing other dependent packages (feel free to skip any packages you already have in your workspace - the only package in the program that is different from the master is the easy_handeye):
+```
+cd ~/catkin_ws/src # replace with path to your workspace (if you followed the WIKI guide, this should be correct)
+git clone https://github.com/pal-robotics/aruco_ros   # aruco_ros package
+
+
 ```
 
 - build
