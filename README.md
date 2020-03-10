@@ -15,7 +15,7 @@ These are the same basic steps for implementation of Easy Hand-Eye.
 
 - clone this fork of the repository into your workspace - this fork is different than the master version of easy_handeye, so if you have the original version, you will need to delete that fersion first:
 ```
-cd ~/catkin_ws/src  # replace with path to your workspace (if you followed the WIKI guide, this should be correct)
+cd ~/catkin_ws/src  # replace with path to your workspace 
 ```
 if you have the original version, remove it from your workspace first:
 ```
@@ -26,17 +26,17 @@ clone the HIRO fork of the repository:
 git clone https://github.com/HIRO-group/easy_handeyee
 ```
 
+
+installing other dependent packages (feel free to skip any packages you already have in your workspace - the only package in the program that is different from the master is the easy_handeye):
+```
+git clone https://github.com/pal-robotics/aruco_ros   # aruco_ros package
+git clone https://github.com/IntelRealSense/realsense-ros   # package for using Intel camera
+git clone https://bitbucket.org/traclabs/trac_ik/src/master/   # inverse kinematics package
+```
 satisfy dependencies
 ```
 cd ..  # now we are inside ~/catkin_ws
 rosdep install -iyr --from-paths src
-```
-installing other dependent packages (feel free to skip any packages you already have in your workspace - the only package in the program that is different from the master is the easy_handeye):
-```
-cd ~/catkin_ws/src # replace with path to your workspace (if you followed the WIKI guide, this should be correct)
-git clone https://github.com/pal-robotics/aruco_ros   # aruco_ros package
-
-
 ```
 
 - build
@@ -44,15 +44,19 @@ git clone https://github.com/pal-robotics/aruco_ros   # aruco_ros package
 catkin build
 ```
 
-### Calibration
+## Calibration
+#### General Overview
 The calibration is built on the principle of a 3D grid. The poses of the upper left and the lower right corners of the Intel RealSense's view are used to define the grid.
 
-## New Camera Position
-If this is the first time you are running the calibration or you have changed the position of the camera above the Sawyer, you will need to intialize the 
+
 
 * Connect to the HIROLab_5G wifi network
 * Plug the Intel RealSense camera cable into your machine
-* Turn on Sawyer
+* Turn on Sawyer by pressing the power button on the computer at the base of the robot
+
+#### New Camera Position
+If this is the first time you are running the calibration or you have changed the position of the camera above the Sawyer, you will need to intialize the boundaries of the grid by recording the new reference positions of the upper left and lower right corners of the camera's view.
+
 
 For all terminal tabs used:
 * Enter your intera workspace:
