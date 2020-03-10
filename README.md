@@ -47,6 +47,7 @@ catkin build
 ## Calibration
 #### General Overview
 The calibration is built on the principle of a 3D grid. The poses of the upper left and the lower right corners of the Intel RealSense's view are used to define the grid.
+![calibration grid](hhttps://github.com/HIRO-group/easy_handeye/blob/master/readme_files/calibration_grid.png)
 
 
 
